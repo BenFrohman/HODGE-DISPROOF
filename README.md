@@ -1,51 +1,49 @@
 # HODGE-DISPROOF
 
 **Author:** Benjamin Stanley Frohman (@BenFrohman)
-**Copyright:** (c) 2026 Benjamin Stanley Frohman. All rights reserved under the Apache License, Version 2.0.
-**License:** Apache-2.0. See `LICENSE`, `NOTICE.md`, `AUTHORS.md`, and `COPYRIGHT`.
+**Copyright:** (c) 2026 Benjamin Stanley Frohman. Apache License 2.0.
+**License:** Apache-2.0. See `LICENSE`, `NOTICE.md`, `AUTHORS.md`, `COPYRIGHT`.
 **Clay tag:** `clay-statement-open`. See `docs/CLAY_TAG.md`.
+**Visibility:** public. Forking allowed. Issues enabled. No repository rulesets.
 
-**Visibility: public.** Anyone may clone, fork, and open issues without authentication for read access.
+https://github.com/BenFrohman/HODGE-DISPROOF
 
-```
-git clone https://github.com/BenFrohman/HODGE-DISPROOF.git
-```
-
-This repository records the Lean 4 **type** of a counterexample to the Hodge statement. It is **not** a Clay close. The rational Hodge conjecture remains **open**.
-
-Sister skeleton: [BenFrohman/HODGE](https://github.com/BenFrohman/HODGE).
+This repository records the Lean 4 **type** of a Hodge counterexample term.
+It is **not** a Clay close. The rational Hodge conjecture remains **open**.
 
 ## Access
 
 | Field | Value |
 |---|---|
-| URL | https://github.com/BenFrohman/HODGE-DISPROOF |
 | Visibility | public |
-| Default branch | `main` (`d9846fef`) |
-| Schema branches | `v1.0.0-schema`, `v1.1.0-schema` |
+| Default branch | `main` |
+| Forking | allowed |
 | Issues | enabled |
-| Pull requests | enabled |
-| Forking | enabled |
-| Branch protection | off |
+| Rulesets | none |
 | License | Apache-2.0 |
+| Clone | `git clone https://github.com/BenFrohman/HODGE-DISPROOF.git` |
 
-## Lean 4
+## Lean files
 
 | File | Role |
 |---|---|
-| `Hodge/Basic.lean` | `Datum` skeleton |
-| `Hodge/Disproof.lean` | `isHodgeDisproof` / gadget `zeroCycle` |
-| `Hodge/ClayBlueprint.lean` | geometric axioms and `ClayDisproofStatement` |
-| `Hodge/ClayStructure.lean` | typeclass gate; no instance |
-| `Hodge/GeometricDictionary.lean` | mock → geometric dictionary |
-| `Hodge/GeometricHost.lean` | named fourfold labels |
+| `Hodge/Basic.lean` | `Datum`, `HodgeConjecture` |
+| `Hodge/Disproof.lean` | `isHodgeDisproof`, gadget `zeroCycle` (quarantined) |
+| `Hodge/FalseOfBadCl.lean` | third-field reduction on the gadget |
+| `Hodge/Typecheck.lean` | Prop vs structure |
+| `Hodge/GeometricHost.lean` | named fourfolds as labels |
+| `Hodge/GeometricDictionary.lean` | Z/V/N/cl → Chow/Betti/OffDiag/cl_X |
+| `Hodge/ClayStructure.lean` | typeclass gate; no gadget instance |
 | `Hodge/ClaySpec.lean` | uninhabited `ClayDisproofTerm` |
+| `Hodge/ClayBlueprint.lean` | axiomatic Clay Σ-sentence; no miss axiom |
 
-`zeroCycle` is quarantined. It cannot inhabit `ClayDisproofStatement`.
+## Docs
+
+`docs/CLAY_BLUEPRINT.md`, `docs/CLAY_DISPROOF_SPEC.md`, `docs/CLAY_STRUCTURE.md`, `docs/CLAY_TAG.md`, `docs/GEOMETRIC_REPLACEMENT.md`, `docs/KERNEL_CHECK.md`, `docs/RELEASE.md`, `papers/PREPRINT.md`.
 
 ## Firewall
 
 - missing instance ≠ Hodge is false
 - `zeroCycle` ≠ a counterexample
-- a global miss axiom ≠ a disproof
+- a typeclass or axiom naming `cl_X` ≠ a disproof
 - Clay status for rational Hodge remains **open**
