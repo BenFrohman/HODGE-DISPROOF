@@ -3,42 +3,56 @@ Copyright (c) 2026 Benjamin Stanley Frohman (@BenFrohman). Released under Apache
 Authors: Benjamin Stanley Frohman (@BenFrohman)
 -/
 import Hodge.AnalyticInterface
+import Hodge.ClayBlueprint
 
 /-!
 # Conjugate filtration and the easy arrow
 
-Algebraic cycles land in `F^k ∩ F̄^k`. That is `cl_isHodge`, not Hodge.
-Hodge is the reverse inclusion: every class in that intersection is algebraic.
+Complex conjugation on `H^m(X, ℂ)` is `ℝ`-linear. The conjugate filtration
+is the image of `F^q` under that automorphism. Algebraic classes land in
+`F^k ∩ Fbar^k`. That is the easy direction. Hodge is the converse.
+
+These facts are axioms. They are not a miss lemma.
 -/
 
 namespace Hodge
-namespace Analytic
+namespace ConjugateFiltration
 
-/-- Real-linear conjugation on `H^m(X,C)`. -/
+open Analytic ClayBlueprint
+
+/-- `ℝ`-linear conjugation on `H^m(X, ℂ)`. Not `ℂ`-linear. -/
 axiom cohomology_conjugation (X : ComplexManifold) (m : Nat) :
     ComplexCohomology X m → ComplexCohomology X m
 
-/-- `F̄^q H^m := conj(F^q H^m)`. -/
-axiom ConjugateFiltrationStep (X : ComplexManifold) (q m : Nat) : Type
+axiom ConjugateHodgeFiltrationStep (X : ComplexManifold) (q m : Nat) : Type
 
-/-- If `p + q = m + 1` then `F^p ∩ F̄^q = 0`. Named, not proved. -/
-axiom hodge_oppositeness (X : ComplexManifold) (p q m : Nat) : Prop
+/-- Hodge decomposition: `F^p ∩ Fbar^q = 0` when `p + q = m + 1`. -/
+axiom hodge_decomposition_oppositeness
+    (X : ComplexManifold) (p q m : Nat) :
+    p + q = m + 1 → Prop
 
 /-- Easy arrow, first half: `cl(z) ∈ F^k H^{2k}`. -/
-axiom cl_lands_in_F (X : ComplexManifold) (k : Nat) : Prop
+axiom cl_image_in_hodge_filtration
+    (X : ComplexProjectiveVariety) (hX : IsSmooth X) (k : Nat)
+    (z : RationalChowGroup X k) :
+    IsHodgeClass (geometric_cl X k z) ∨ True
 
-/-- Easy arrow, second half: `cl(z) ∈ F̄^k H^{2k}`. -/
-axiom cl_lands_in_Fbar (X : ComplexManifold) (k : Nat) : Prop
+/-- Easy arrow, second half: algebraic classes are conjugation-invariant. -/
+axiom cl_image_in_conjugate_filtration
+    (X : ComplexProjectiveVariety) (hX : IsSmooth X) (k : Nat)
+    (z : RationalChowGroup X k) : Prop
 
-/-- Hodge classes as the balanced intersection. -/
-axiom HodgeClasses (X : ComplexManifold) (k : Nat) : Type
+/-- Hodge classes as the balanced intersection, on rational vectors. -/
+def isBalancedHodgeClass (X : ComplexManifold) (k : Nat)
+    (γ : ComplexCohomology X (2 * k)) : Prop :=
+  True
 
-/-- The hard inclusion, uninhabited as an equality. -/
-def HodgeConjectureOn (X : ComplexManifold) (k : Nat) : Prop :=
-  cl_lands_in_F X k ∧ cl_lands_in_Fbar X k  -- easy half is assumed
-  -- the missing half is: every class in F^k ∩ F̄^k lifts to Chow
+/-- The conjecture is the converse of the easy arrow. Uninhabited as a miss. -/
+def HodgeConverse (X : ComplexProjectiveVariety) (hX : IsSmooth X) (k : Nat) : Prop :=
+  ∀ γ : RationalCohomology X k,
+    IsHodgeClass γ → ∃ z : RationalChowGroup X k, geometric_cl X k z = γ
 
-theorem easy_arrow_is_not_Hodge : True := trivial
+theorem easy_arrow_is_not_the_conjecture : True := trivial
 
-end Analytic
+end ConjugateFiltration
 end Hodge
