@@ -37,10 +37,13 @@ See `docs/RELEASE.md`.
 
 ## Lean 4
 
-Interface lives in `Hodge/Basic.lean` (Datum, `cl`, `HodgeConjecture`).
-The disproof type lives in `Hodge/Disproof.lean`.
+Interface: `Hodge/Basic.lean` (`Datum`, `cl`, `HodgeConjecture`).
+Disproof type: `Hodge/Disproof.lean`.
 
 ```lean
+def isHodgeDisproof (D : Datum Z V N) (γ : V) : Prop :=
+  γ ∈ D.hodgeClasses ∧ ∀ z : Z, D.cl z = γ → False
+
 structure HodgeDisproof (Z V N : Type*)
     [AddCommGroup Z] [Module Rat Z]
     [AddCommGroup V] [Module Rat V]
@@ -51,18 +54,19 @@ structure HodgeDisproof (Z V N : Type*)
   no_cycle  : ∀ z : Z, D_bad.cl z = γ_bad → False
 ```
 
+`isHodgeDisproof D γ` is the Prop-level pair. `HodgeDisproof` is the Type-level
+triple. A term of `HodgeDisproof` yields `¬ D_bad.HodgeConjecture`.
+
 The only inhabited term in this repository is `zeroCycleDisproof`:
 `D_bad = zeroCycle` (`cl = 0`, `obstruction = 0`, `codim = 2`), `γ_bad = 1`.
 That gadget is **not a variety** and is **not** a Clay counterexample.
-
-Pins: Lean 4.22.0, mathlib v4.22.0. See `lean-toolchain` and `PIN`.
 
 ## Evidence ledger
 
 **Exists**
 
 - Logical form: `¬∀D∀γ∃z (cl z = γ)` unpacks as `∃D∃γ∀z (cl z = γ → False)`.
-- `zeroCycle_not_hodge` / `zeroCycleDisproof` inhabit that type on a linear-algebra sentinel.
+- `zeroCycle_isHodgeDisproof` / `zeroCycleDisproof` inhabit that type on a linear-algebra sentinel.
 - Integral Hodge is false: Atiyah–Hirzebruch (1961); Kollár (1992).
 - Compact Kähler non-projective Hodge is false: Voisin (2002).
 
@@ -77,7 +81,3 @@ Pins: Lean 4.22.0, mathlib v4.22.0. See `lean-toolchain` and `PIN`.
 - `zeroCycle` ≠ a counterexample
 - a finite list of hosts ≠ `∀ D`
 - Clay status for rational Hodge remains **open**
-
-## Citation
-
-See `CITATION.cff`. Cite as a formal schema, not as a disproof of the Millennium problem.
