@@ -1,4 +1,4 @@
-# Locked lemmas for a polarized fourfold D
+# Focused equivalence for a polarized fourfold D
 
 **Author:** Benjamin Stanley Frohman (@BenFrohman)
 **License:** Apache-2.0
@@ -6,44 +6,22 @@
 
 Fix D = (X, ω) a smooth complex projective fourfold.
 
-| Symbol | Meaning |
-|---|---|
-| L(D) | Hodge holds on D: every primitive rational (2,2)-class is algebraic |
-| Δ_Hdg(D) | extra primitive Hodge classes: P^4(X,Q) ∩ H^{2,2}(X) |
-| Δ_miss(D) | Δ_Hdg(D) \\ im(cl_X) |
+```
+L(D)          = Hodge holds on D
+Δ_miss(D)    = extra primitive (2,2) classes outside im(cl_X)
+```
 
-## Lemma 1 (locked)
+## Locked statement
 
 ```
 L(D)  ⇔  Δ_miss(D) = ∅
 ```
 
-Definition of Hodge on D. Not a disproof.
+Hodge holds on D if and only if the miss locus is empty.
+This is the definition. It is not a Clay disproof.
 
-## Lemma 2 (locked)
+A disproof is a host with `Δ_miss(D) ≠ ∅`. None is supplied.
 
-```
-Δ_Hdg(D) = ∅  ⇒  L(D)
-```
-
-If there are no extra primitive Hodge classes, only Lefschetz classes remain,
-and those are algebraic.
-
-## Locked chain
-
-```
-Δ_Hdg = ∅  ⇒  Δ_miss = ∅  ⇔  L
-```
-
-## Not locked (false)
-
-```
-L(D)  ⇒  Δ_Hdg(D) = ∅
-```
-
-## Not a disproof
-
-Lemma 1 is an equivalence. A disproof is a host with `Δ_miss ≠ ∅`.
-That host is not supplied.
+The old three-part chain `L ⇔ Δ=∅ ⇔ (Lemma 1 ∧ Lemma 2)` is withdrawn.
 
 Clay status: **open**.
