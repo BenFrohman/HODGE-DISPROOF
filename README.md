@@ -1,83 +1,49 @@
 # HODGE-DISPROOF
 
 **Author:** Benjamin Stanley Frohman (@BenFrohman)
-**Copyright:** (c) 2026 Benjamin Stanley Frohman. All rights reserved under the Apache License, Version 2.0.
-**License:** Apache-2.0. See `LICENSE`, `NOTICE.md`, `AUTHORS.md`, and `COPYRIGHT`.
-**Clay tag:** `clay-statement-open` / `v1.0.0-schema`. See `docs/CLAY_TAG.md`.
+**Copyright:** (c) 2026 Benjamin Stanley Frohman. Apache License 2.0.
+**License:** Apache-2.0. See `LICENSE`, `NOTICE.md`, `AUTHORS.md`, `COPYRIGHT`.
+**Clay tag:** `clay-statement-open`. See `docs/CLAY_TAG.md`.
+**Visibility:** public. Forking allowed. Issues enabled. No repository rulesets.
 
-This repository records the Lean 4 **type** of a counterexample to the Hodge statement
+https://github.com/BenFrohman/HODGE-DISPROOF
 
-```
-∀ D γ, ∃ z, cl z = γ
-```
+This repository records the Lean 4 **type** of a Hodge counterexample term.
+It is **not** a Clay close. The rational Hodge conjecture remains **open**.
 
-A term of the negation is the triple
-
-```
-(D_bad,  γ_bad,  ∀ z, cl z = γ_bad → False)
-```
-
-plus the side-condition that `γ_bad` is a Hodge class.
-
-**This is not a Clay close.** The rational Hodge conjecture on smooth complex
-projective varieties remains **open**. Sister skeleton: [BenFrohman/HODGE](https://github.com/BenFrohman/HODGE).
-
-## Public priority release
+## Access
 
 | Field | Value |
 |---|---|
-| Repository | https://github.com/BenFrohman/HODGE-DISPROOF |
 | Visibility | public |
-| Release | `v1.0.0-schema` |
-| Clay tag | `clay-statement-open` |
-| Date | 23 September 2026 |
-| Status | schema + gadget inhabitant; not a geometric fourfold |
+| Default branch | `main` |
+| Forking | allowed |
+| Issues | enabled |
+| Rulesets | none |
+| License | Apache-2.0 |
+| Clone | `git clone https://github.com/BenFrohman/HODGE-DISPROOF.git` |
 
-See `docs/RELEASE.md`.
+## Lean files
 
-## Lean 4
+| File | Role |
+|---|---|
+| `Hodge/Basic.lean` | `Datum`, `HodgeConjecture` |
+| `Hodge/Disproof.lean` | `isHodgeDisproof`, gadget `zeroCycle` (quarantined) |
+| `Hodge/FalseOfBadCl.lean` | third-field reduction on the gadget |
+| `Hodge/Typecheck.lean` | Prop vs structure |
+| `Hodge/GeometricHost.lean` | named fourfolds as labels |
+| `Hodge/GeometricDictionary.lean` | Z/V/N/cl → Chow/Betti/OffDiag/cl_X |
+| `Hodge/ClayStructure.lean` | typeclass gate; no gadget instance |
+| `Hodge/ClaySpec.lean` | uninhabited `ClayDisproofTerm` |
+| `Hodge/ClayBlueprint.lean` | axiomatic Clay Σ-sentence; no miss axiom |
 
-Interface: `Hodge/Basic.lean` (`Datum`, `cl`, `HodgeConjecture`).
-Disproof type: `Hodge/Disproof.lean`.
+## Docs
 
-```lean
-def isHodgeDisproof (D : Datum Z V N) (γ : V) : Prop :=
-  γ ∈ D.hodgeClasses ∧ ∀ z : Z, D.cl z = γ → False
-
-structure HodgeDisproof (Z V N : Type*)
-    [AddCommGroup Z] [Module Rat Z]
-    [AddCommGroup V] [Module Rat V]
-    [AddCommGroup N] [Module Rat N] where
-  D_bad     : Datum Z V N
-  γ_bad     : V
-  γ_isHodge : γ_bad ∈ D_bad.hodgeClasses
-  no_cycle  : ∀ z : Z, D_bad.cl z = γ_bad → False
-```
-
-`isHodgeDisproof D γ` is the Prop-level pair. `HodgeDisproof` is the Type-level
-triple. A term of `HodgeDisproof` yields `¬ D_bad.HodgeConjecture`.
-
-The only inhabited term in this repository is `zeroCycleDisproof`:
-`D_bad = zeroCycle` (`cl = 0`, `obstruction = 0`, `codim = 2`), `γ_bad = 1`.
-That gadget is **not a variety** and is **not** a Clay counterexample.
-
-## Evidence ledger
-
-**Exists**
-
-- Logical form: `¬∀D∀γ∃z (cl z = γ)` unpacks as `∃D∃γ∀z (cl z = γ → False)`.
-- `zeroCycle_isHodgeDisproof` / `zeroCycleDisproof` inhabit that type on a linear-algebra sentinel.
-- Integral Hodge is false: Atiyah–Hirzebruch (1961); Kollár (1992).
-- Compact Kähler non-projective Hodge is false: Voisin (2002).
-
-**Does not exist**
-
-- No accepted pair `(X, γ)` with `X` a smooth complex projective variety and `γ` a rational Hodge class outside the image of `cl`.
-- No `HodgeDisproof` term whose `D_bad` is a geometric fourfold.
+`docs/CLAY_BLUEPRINT.md`, `docs/CLAY_DISPROOF_SPEC.md`, `docs/CLAY_STRUCTURE.md`, `docs/CLAY_TAG.md`, `docs/GEOMETRIC_REPLACEMENT.md`, `docs/KERNEL_CHECK.md`, `docs/RELEASE.md`, `papers/PREPRINT.md`.
 
 ## Firewall
 
 - missing instance ≠ Hodge is false
 - `zeroCycle` ≠ a counterexample
-- a finite list of hosts ≠ `∀ D`
+- a typeclass or axiom naming `cl_X` ≠ a disproof
 - Clay status for rational Hodge remains **open**

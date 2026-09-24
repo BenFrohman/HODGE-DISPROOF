@@ -11,23 +11,23 @@ projective varieties. Clay status: open.
 
 ## Author of this repository
 
-Benjamin Stanley Frohman (@BenFrohman) is the author of the Lean encoding,
-the documentation, the Clay tag, and this public priority release.
+Benjamin Stanley Frohman (@BenFrohman) is the sole author of the Lean
+encoding under `Hodge/`, documentation under `docs/`, the preprint draft
+under `papers/`, the Clay tag, and this public release.
 
+GitHub: https://github.com/BenFrohman
+X: https://x.com/Investor0x
 Sister record: https://github.com/BenFrohman/HODGE
 
 ## Software this encoding stands on
 
-- Lean 4 (leanprover), pinned to v4.22.0
-- Mathlib4 (leanprover-community), pinned to v4.22.0
-
-Reuse of Mathlib is under Mathlib's own Apache-2.0 terms. That library is not
-this author's work.
+- Lean 4 (leanprover)
+- Mathlib4 (leanprover-community), Apache-2.0 — not this author's work
 
 ## Mathematics this encoding records (citation, not coauthorship)
 
 - W. V. D. Hodge — the Hodge conjecture
 - M. F. Atiyah and F. Hirzebruch (1961) — integral Hodge is false in torsion
 - J. Kollár (1992) — integral Hodge is false beyond torsion
-- C. Voisin (2002) — Hodge fails for some compact Kähler non-projective manifolds
+- C. Voisin (2002, 2025) — Kähler counterexamples; surveys
 - Clay Mathematics Institute — Millennium problem statement

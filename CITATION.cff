@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "HODGE-DISPROOF"
+message: "Cite this repository as a Lean 4 schema, not as a disproof of the Clay Hodge conjecture."
+type: software
+authors:
+  - family-names: Frohman
+    given-names: Benjamin Stanley
+    alias: "@BenFrohman"
+repository-code: "https://github.com/BenFrohman/HODGE-DISPROOF"
+url: "https://github.com/BenFrohman/HODGE-DISPROOF"
+license: Apache-2.0
+version: "1.2.0-schema"
+date-released: "2026-09-23"
+keywords:
+  - Hodge conjecture
+  - Lean 4
+  - Clay Mathematics Institute
+  - formal schema
+abstract: >
+  Lean 4 encoding of the type of a Hodge counterexample term,
+  together with geometric and analytic interfaces. Not a Clay close.
+  The rational Hodge conjecture remains open.
