@@ -1,4 +1,4 @@
-# Lemma 1 and Lemma 2, given D
+# Lemma 1 and Lemma 2, locked for D
 
 **Author:** Benjamin Stanley Frohman (@BenFrohman)
 **License:** Apache-2.0
@@ -6,52 +6,45 @@
 
 Fix a smooth polarized complex projective fourfold `D = (X, ω)`.
 
-```
-Δ(D) := P^4(X,Q) ∩ H^{2,2}(X)
-```
+## Dictionary
 
-This is the space of *primitive* rational Hodge classes of type `(2,2)`.
-It does not contain `ω^2` (`ω^2` lives in `L^2 P^0`).
+| Symbol | Reading |
+|---|---|
+| `L(D)` | Hodge holds on `D`: every primitive rational `(2,2)`-class is algebraic |
+| `Δ_Hdg(D)` | `P^4(X,Q) ∩ H^{2,2}(X)` |
+| `Δ_miss(D)` | `Δ_Hdg(D) \\ im(cl_X)` |
+| `Δ_Hdg = ∅` | no extra primitive Hodge classes |
 
-`Δ(D) = 0` means there are no extra primitive Hodge classes.
+`ω^2` is not in `P^4`.
 
-Let `L(D)` mean: Hodge holds on `D` in codimension 2, i.e. every class in
-`H^4(X,Q) ∩ H^{2,2}(X)` is algebraic.
-
-## Lemma 1 (`Δ = 0 ⇒ L`)
-
-If `Δ(D) = 0`, then by the Lefschetz decomposition
+## Lemma 1 (locked)
 
 ```
-H^4 ≃ P^4 ⊕ L P^2 ⊕ L^2 P^0
+L(D)  ⇔  Δ_miss(D) = ∅
 ```
 
-and Lefschetz `(1,1)`, every Hodge class of type `(2,2)` is algebraic.
-So `L(D)` holds. The only classes present are Lefschetz classes.
+This is the definition. It is not a disproof. A disproof is one `D` with
+`Δ_miss(D) ≠ ∅`.
 
-## Lemma 2 (`L` does not imply `Δ = 0`)
-
-`L(D)` says every class *in* `Δ(D)` is algebraic. It does not say
-`Δ(D)` is zero. Cubic fourfolds and the Fermat sextic fourfold have
-nontrivial algebraic primitive `(2,2)` classes, so `L` holds (or is
-known in the rational case) with `Δ ≠ 0`.
-
-The missing converse is:
+## Lemma 2 (locked)
 
 ```
-L(D)  ∧  im(cl_X) ∩ P^4 = 0   ⇒   Δ(D) = 0
+Δ_Hdg(D) = ∅  ⇒  Δ_miss(D) = ∅  ⇒  L(D)
 ```
 
-That is: Hodge plus “no algebraic primitives” implies no Hodge primitives.
+If there are no extra primitive Hodge classes, there is nothing to miss,
+and Hodge holds by Lefschetz `(1,1)` plus the decomposition of `H^4`.
 
-## The chain that is true
+## Not locked (false)
 
 ```
-Δ(D) = 0  ⇒  L(D)                 (Lemma 1)
-L(D) ∧ (no algebraic primitives)  ⇒  Δ(D) = 0   (Lemma 2')
+L(D)  ⇒  Δ_Hdg(D) = ∅
 ```
 
-`L(D) ⇔ Δ(D) = 0` is false in general.
+Cubics, Fermat, Lin-Zhang split family: `L` with `Δ_Hdg ≠ ∅`.
 
-Neither lemma is a miss. Lemma 1 is why Hodge is easy on a very general
-high-degree fourfold: extra classes never appear.
+## Chain that holds
+
+```
+Δ_Hdg = ∅  ⇒  Δ_miss = ∅  ⇔  L
+```
