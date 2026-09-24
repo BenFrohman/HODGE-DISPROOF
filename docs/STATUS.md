@@ -1,45 +1,53 @@
-# Status
+# Status: blueprint, not a Clay close
 
 **Author:** Benjamin Stanley Frohman (@BenFrohman)
 **License:** Apache-2.0
-**Date:** 24 September 2026
-**Clay status:** **open**
+**Clay status:** open
 
-## Blueprint vs construction
+## What this repository is
 
-The repository records the type of a counterexample term:
+A Lean 4 map of the type of a Hodge counterexample term:
 
 ```
 ¬ ∀ X γ, ∃ z, cl_X z = γ
 ```
 
-is a Σ-triple `⟨X_bad, γ_bad, fun z h => ?miss⟩`.
+is a Σ-triple `⟨X_bad, γ_bad, fun z h => ?miss⟩` with `γ` Hodge.
 
-That is a blueprint. It is not a Clay disproof.
+That type is recorded. The three slots are empty.
 
-## What `#print axioms` would show
-
-If `rational_hodge_conjecture_is_false` were closed by
+## What an axiom does
 
 ```
-axiom ConcreteClayFourfold
-axiom γ_clay
-axiom false_of_geometric_miss_on_host
+axiom X_bad : Variety
+axiom γ_bad : HodgeClass X_bad
+axiom miss_proof : ∀ z, cl X_bad z = γ_bad → False
+theorem rational_hodge_conjecture_is_false := ⟨X_bad, γ_bad, miss_proof⟩
 ```
 
-then `#print axioms rational_hodge_conjecture_is_false` would list those
-names. That list is a disqualification, not a prize file.
+`#print axioms rational_hodge_conjecture_is_false` would list
+`X_bad`, `γ_bad`, `miss_proof`. That is:
 
-Infrastructure names (Betti, `cl_X` as an interface) may appear while
-the geometry is missing from Mathlib. A miss axiom may not.
+> if a counterexample exists, then a counterexample exists.
 
-## What would count
+Clay does not accept that list. The kernel check is relative to the axioms
+you added.
 
-1. A scheme `X` constructed from a coordinate ring, proved smooth projective of dimension 4 over `ℂ`.
-2. A class `γ` proved to lie in `P^4(X,ℚ) ∩ H^{2,2}(X)`.
-3. A proof that no finite `ℚ`-combination of surfaces maps to `γ`.
+## What would empty that list
 
-None of those three is in this repository. `#print axioms` on any gadget
-(`zeroCycle`, `2n=5`) is irrelevant to Clay.
+| Slot | Construction |
+|---|---|
+| `X_bad` | a scheme from a coordinate ring, proved smooth projective over `ℂ` |
+| `γ_bad` | a class in `H^{2k}(X,Q) ∩ H^{k,k}(X)` |
+| `?miss` | a proof that no finite `ℚ`-span of cycles equals that class |
 
-See `docs/FIVE_EMPTY_TERMS.md`, `docs/DISPROOF_CRITERION.md`.
+No `sorry`. No miss axiom. `#print axioms` should then show only the
+foundational axioms of Lean / Mathlib, not a user-declared counterexample.
+
+## Present field
+
+Those three constructions do not exist in this repository or in the
+accepted literature for the *rational* projective Hodge conjecture.
+Integral and non-projective Kähler counterexamples are different theorems.
+
+Clay status: **open**.
