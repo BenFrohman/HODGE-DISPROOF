@@ -2,35 +2,42 @@
 
 Author: Benjamin Stanley Frohman (@BenFrohman)
 Copyright (c) 2026 Benjamin Stanley Frohman. Apache-2.0.
-Date: 27 September 2026
 
-## The type (written)
+The type of a rational Hodge counterexample is the Σ-triple
 
-A releasing term of Term B is a triple
+    (D_bad, γ_bad, ∀z (cl(z)=γ_bad ⇒ False))
 
-    (D_bad, γ_bad, ∀z (cl(z) = γ_bad ⇒ False))
+or, on a geometric fourfold,
 
-on a smooth complex projective fourfold, equivalently
+    ⟨ X, γ, λ Z_s a. γ ≠ ∑_{z ∈ Z_s} a_z cl_X(z) ⟩
 
-    ⟨ X, γ, λ Zs a. γ ≠ ∑_{z ∈ Zs} a_z cl_X(z) ⟩
+Lean: `Hodge.Geometric.ClayDisproofTerm` in `Hodge/ClaySpec.lean`.
+That structure is a type. It has no constructor term.
 
-with
+## Fields
 
-1. X named, smooth, projective, dimension 4;
-2. γ ∈ H^4(X, ℚ) ∩ H^{2,2}(X), preferably primitive;
-3. a proof that no finite ℚ-combination of surfaces equals γ.
+| field | required data | status |
+|---|---|---|
+| 1. X | named smooth projective fourfold | written: X=V(F)⊂ℝP^5 |
+| 2. γ | named class in H^4(X,ℚ)∩H^{2,2}(X) intended as a miss | not written as a miss |
+| 3. miss lemma | ∀ finite surfaces and rationals, γ is not that combination | hole |
 
-Field 1 is written: X = V(F) ⊂ ℙ^5 with
+Named classes on this host that are written:
 
-    F = x0^5 x3 + x3^6 + x1^5 x4 + x4^6 + x2^5 x5 + x5^6.
+    [Π],    [S] = h² − [Π]
 
-## The inhabitant (not written)
+both lie in im(cl_X). They cannot occupy field 2 of a disproof.
 
-Permission to release a term is not a term.
-No named class on this host has been proved to lie outside im(cl_X).
-[Π] and [S] = h^2 − [Π] lie in the image.
-zeroCycle is not a fourfold.
-W, μ(W)=25, |Aut|=30, and F^T are not classes in H^4 ∩ H^{2,2}.
+## What does not inhabit the type
 
-Clay status: OPEN.
-This file is not theorem rational_hodge_conjecture_is_false.
+- `zeroCycle` with cl=0, γ=1 — gadget, not a fourfold
+- ⟨V(F), [Π], …⟩ or ⟨V(F), [S], …⟩ — algebraic classes
+- F^T, W, μ(W)=25, μ(W^T)=26, |Aut|=30 — singularity data, not H^4∩H^{2,2}
+- an axiom `false_of_geometric_miss` — a named hole
+- a declaration that the term “now exists” — permission is not a proof
+
+## Clay tag
+
+`clay-statement-open`.
+
+The rational Hodge conjecture remains open. Term A and Term B contradict each other. Inhabiting either is the problem. This repository records the type of Term B. It does not supply the term.
