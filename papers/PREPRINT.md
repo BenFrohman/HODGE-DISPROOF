@@ -1,12 +1,12 @@
 # The type of a Hodge counterexample term
 
 **Author:** Benjamin Stanley Frohman (@BenFrohman)
-**Date:** 23 September 2026
+**Date:** 23 September 2026. Integral correction: 28 September 2026.
 **License:** Apache-2.0
 **Repository:** https://github.com/BenFrohman/HODGE-DISPROOF
 **Clay tag:** `clay-statement-open` / `v1.1.0-schema`
 
-> This note records a Lean 4 *type*. It is not a disproof of the Clay Hodge conjecture.
+> This note records a Lean 4 *type*. It is not a disproof of the Clay Hodge conjecture. The Clay statement is rational. The integral Hodge conjecture is a different sentence, and it is already false for other reasons.
 
 ## 1. Official statement (Π, not Σ)
 
@@ -21,7 +21,9 @@ projective variety `X`, a valid rational Hodge class `γ`, and a closed
 lemma proving non-algebraicity.
 
 Deligne / Clay: every class in `H^{2k}(X,ℚ) ∩ H^{k,k}(X)` is a `ℚ`-linear
-combination of classes of algebraic cycles.
+combination of classes of algebraic cycles. The coefficients are rational.
+Replacing `ℚ` by `ℤ` is the integral Hodge conjecture, stated in §8.
+It is not the Clay problem.
 
 ## 2. What a local kernel check certifies
 
@@ -121,3 +123,31 @@ Firewall: missing instance ≠ Hodge is false; `zeroCycle` ≠ a fourfold;
 mentioning `cl_X` ≠ a close.
 
 Clay status: **open**.
+
+## 8. Integral Hodge is not this conjecture
+
+Full note: `docs/INTEGRAL_HODGE.md`.
+
+The integral Hodge conjecture asks for surjectivity of
+
+```text
+cl_Z : CH^k(X) → H^{2k}(X, Z)
+```
+
+onto `H^{2k}(X,Z) ∩ H^{k,k}(X)`. It is false in general: Atiyah–Hirzebruch gave torsion counterexamples, and Kollár gave non-torsion counterexamples on very general hypersurfaces in `P^4`. A class that becomes algebraic after multiplying by an integer is a rational algebraic class, so those counterexamples do not touch Clay.
+
+On the three-chain sextic the rational primitive projection
+
+```text
+α = [Π] − (1/6) h^2
+```
+
+is not an integral class. Clearing the denominator gives the integral class
+
+```text
+β = 6α = h^2 − 6[Π] = [S] − 5[Π],
+```
+
+which is orthogonal to `h^2` and is an integral combination of two surfaces. So `β` lies in the image of `cl_Z`. It is not an integral counterexample, and `α = β/6` is not a rational counterexample.
+
+The lattice `Z h^2 + Z[Π]` has discriminant `125`. Whether that lattice is saturated in `H^4(X,Z)` is not decided here. An unsaturated class would be an integral question only. It would still lie in `Q⟨h^2, [Π]⟩`, so it would not be a rational miss.
