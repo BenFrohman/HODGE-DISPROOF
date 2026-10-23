@@ -1,3 +1,4 @@
+<!-- Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under Apache-2.0. -->
 # The coefficient ring of the Clay Hodge sentence
 
 **Author:** Benjamin Stanley Frohman (@BenFrohman)

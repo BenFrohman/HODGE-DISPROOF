@@ -1,3 +1,4 @@
+<!-- Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under Apache-2.0. -->
 # R_12 = 1751 is a complex dimension
 
 **Author:** Benjamin Stanley Frohman (@BenFrohman)

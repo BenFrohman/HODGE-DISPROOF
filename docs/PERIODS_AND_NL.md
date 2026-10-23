@@ -1,3 +1,4 @@
+<!-- Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under Apache-2.0. -->
 # Periods, Abel-Jacobi, and Noether-Lefschetz
 
 **Author:** Benjamin Stanley Frohman (@BenFrohman)
