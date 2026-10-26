@@ -1,0 +1,13 @@
+{
+  "schema": "sealguard-manifest-v1.0",
+  "repository": "BenFrohman/HODGE-DISPROOF",
+  "doi": "10.5281/zenodo.23653001",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "public_surface_policy": "VERIFIED_PUBLIC_SURFACE_ONLY",
+  "classified_ip_redaction": "ACTIVE_ZERO_LEAKAGE",
+  "merkle_root_sha256": "412a9c8922e6c9d698f4b8995b05b7a94be80131c053eea2e8b636ee0c22a41a",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "bd2dcd950e01b16bf042f37e1521e18bfc7a53dbd1a7189ec2e62d359048060ae62bdc536cbdc5524aadd4ec08758bc0aa00da87fd73fa6f336aa7653142bf01"
+}

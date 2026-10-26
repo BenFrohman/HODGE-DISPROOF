@@ -1,0 +1,126 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+
+\title{\textbf{HODGE-DISPROOF: Dependent Type-Theoretic Schema and 31-Module Lean 4 Audit Framework for Rational Hodge Counterexample Candidates}}
+\author{Benjamin Stanley Frohman\\
+\small ORCID: \href{https://orcid.org/0009-0006-7068-3718}{0009-0006-7068-3718} \quad|\quad
+GitHub: \href{https://github.com/BenFrohman/HODGE-DISPROOF}{\texttt{BenFrohman/HODGE-DISPROOF}}\\
+\small Dedicated 1-to-1 Zenodo DOI: \href{https://doi.org/10.5281/zenodo.23653001}{\texttt{10.5281/zenodo.23653001}}}
+\date{Earliest Commit Provenance: 2026-09-23 02:28:40 PM CDT (UTC-5)\\
+Siloed Archival Edition: October 25, 2026 (America/Chicago CDT)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Standalone 31-module Lean 4 formalization (`Hodge/*.lean`, `Main.lean`, `EVIDENCE\_LEDGER.md`) specifying the exact dependent type-theoretic signature (D\_bad, gamma\_bad, forall z, cl(z) = gamma\_bad -> False) required for any putative counterexample to the rational Hodge Conjecture, together with automated audit checks tracking which candidate geometric inputs are inhabited vs. open.
+\end{abstract}
+
+\section{Scope, Scientific Honesty, and Non-Claim Boundary}
+Formalizes the type-theoretic verification schema and audit ledger for testing candidate counterexamples in Lean 4; explicitly records Clay status as OPEN and does not claim an inhabited unconditional disproof.
+
+\begin{itemize}
+  \item \textbf{Repository:} \texttt{https://github.com/BenFrohman/HODGE-DISPROOF}
+  \item \textbf{Dedicated 1-to-1 Zenodo DOI:} \texttt{10.5281/zenodo.23653001}
+  \item \textbf{Earliest Git Commit SHA:} \texttt{974ac90ad5b6e7b134a51a37ea1b9131f8cc77c3} (2026-09-23 02:28:40 PM CDT (UTC-5))
+  \item \textbf{License \& Copyright:} Copyright \textcopyright\ 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0.
+\end{itemize}
+
+\section{Technical Overview \& Repository Specification}
+**Author:** Benjamin Stanley Frohman (@BenFrohman)
+
+**Copyright:** (c) 2026 Benjamin Stanley Frohman. Apache License 2.0.
+
+**License:** Apache-2.0. See `LICENSE`, `NOTICE.md`, `AUTHORS.md`, `COPYRIGHT`.
+
+**Clay tag:** `clay-statement-open`. See `docs/CLAY\_TAG.md`.
+
+**Visibility:** public. Forking allowed. Issues enabled. No repository rulesets.
+
+https://github.com/BenFrohman/HODGE-DISPROOF
+
+This repository records the Lean 4 **type** of a Hodge counterexample term.
+
+It is **not** a Clay close. The rational Hodge conjecture remains **open**.
+
+| Field | Value |
+
+|---|---|
+
+| Visibility | public |
+
+| Default branch | `main` |
+
+| Forking | allowed |
+
+| Issues | enabled |
+
+| Rulesets | none |
+
+| License | Apache-2.0 |
+
+| Clone | `git clone https://github.com/BenFrohman/HODGE-DISPROOF.git` |
+
+| File | Role |
+
+\section{Cryptographic Provenance \& File Inventory}
+Every source artifact in \texttt{BenFrohman/HODGE-DISPROOF} is audited via \texttt{titan-audit}
+(\texttt{audit/TITAN\_AUDIT\_CERTIFICATE.json}) and sealed under a deterministic SHA-256 Merkle tree via
+\texttt{sealguard} (\texttt{PROVENANCE\_MERKLE\_ROOT.json}) signed with Ed25519 key fingerprint
+\texttt{b428fb72676f1c52}.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.52\textwidth}rr}
+\toprule
+\textbf{Repository Path} & \textbf{Size} & \textbf{SHA-256 Prefix} \\
+\midrule
+\texttt{AUTHORS.md} & 1141 B & \texttt{5272a819c57d7ae2...} \\
+\texttt{CHANGELOG.md} & 773 B & \texttt{8c6ff5fa37a31dd9...} \\
+\texttt{CITATION.cff} & 720 B & \texttt{597ee27ad5255adb...} \\
+\texttt{COPYRIGHT} & 407 B & \texttt{f8414c79734515cb...} \\
+\texttt{Hodge/AnalyticInterface.lean} & 2859 B & \texttt{73f02439d9f8169f...} \\
+\texttt{Hodge/Basic.lean} & 2234 B & \texttt{3ebaefbd2ebf8fb9...} \\
+\texttt{Hodge/ClayBlueprint.lean} & 2295 B & \texttt{f1ec1b5d2a4d76bd...} \\
+\texttt{Hodge/ClaySpec.lean} & 1162 B & \texttt{6998297c71f31371...} \\
+\texttt{Hodge/ClayStructure.lean} & 1955 B & \texttt{57a68ea0b7b53dc4...} \\
+\texttt{Hodge/CoeffRing.lean} & 1568 B & \texttt{8347242ef3647111...} \\
+\texttt{Hodge/ConjugateFiltration.lean} & 2090 B & \texttt{7a947e863b0d29d6...} \\
+\texttt{Hodge/Disproof.lean} & 2330 B & \texttt{cf09c00cdbe9c9ff...} \\
+\texttt{Hodge/EvenOddGadget.lean} & 2235 B & \texttt{88280090520e08d7...} \\
+\texttt{Hodge/FalseOfBadCl.lean} & 2266 B & \texttt{693bb8734c14db1a...} \\
+\texttt{Hodge/Fields123.lean} & 1409 B & \texttt{68cfbd867eae2f09...} \\
+\texttt{Hodge/FourfoldCase.lean} & 1490 B & \texttt{260c79b96ed4c259...} \\
+\texttt{Hodge/FourfoldMissType.lean} & 1163 B & \texttt{93bca6ff5c30d831...} \\
+\texttt{Hodge/GeometricDictionary.lean} & 1838 B & \texttt{69bc48acdccb1785...} \\
+\texttt{Hodge/GeometricHost.lean} & 3157 B & \texttt{a9829d2fbdd679ea...} \\
+\texttt{Hodge/HardLefschetz.lean} & 1821 B & \texttt{7dfdb7a902149247...} \\
+\texttt{Hodge/IntegratedGeometry.lean} & 1590 B & \texttt{96adc5992e8501af...} \\
+\texttt{Hodge/IntegratedSpec.lean} & 1936 B & \texttt{e6ef5b7208065f97...} \\
+\texttt{Hodge/LefschetzIteration.lean} & 1448 B & \texttt{65c33c67280cb1b4...} \\
+\texttt{Hodge/Lexicon.lean} & 1063 B & \texttt{89569e16fbb4a32b...} \\
+\texttt{Hodge/LinZhang.lean} & 975 B & \texttt{1f09d6e1b93dfde3...} \\
+\texttt{Hodge/LinZhangPolynomial.lean} & 791 B & \texttt{e446a92e50a8e0bc...} \\
+\texttt{Hodge/PeriodInterface.lean} & 1189 B & \texttt{33c02d6a7a56856c...} \\
+\texttt{Hodge/PrimitiveDecomposition.lean} & 1321 B & \texttt{163393e411918b18...} \\
+\texttt{Hodge/ProjectiveFourfoldSpace.lean} & 1163 B & \texttt{712d77d9ac584a9f...} \\
+\texttt{Hodge/RealProjectiveFourfold.lean} & 1831 B & \texttt{d81220e40ca1938b...} \\
+\texttt{Hodge/SchemeSpec.lean} & 1641 B & \texttt{7fa822cae65e720d...} \\
+\texttt{Hodge/ThomSebastiani.lean} & 1024 B & \texttt{36a3f0ec6ab0079c...} \\
+\texttt{Hodge/Typecheck.lean} & 1500 B & \texttt{079be03225284a28...} \\
+\texttt{Hodge/VF.lean} & 812 B & \texttt{190f8621e6ef5475...} \\
+\texttt{Hodge/X5.lean} & 1411 B & \texttt{2c0f85fb8bc80ffe...} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vfill
+\noindent\rule{\textwidth}{0.4pt}\\
+\footnotesize
+\textbf{Attribution \& Licensing Notice:} Copyright \textcopyright\ 2026 Benjamin Stanley Frohman (ORCID: \texttt{0009-0006-7068-3718}).
+Licensed under the Apache License, Version 2.0.
+\end{document}

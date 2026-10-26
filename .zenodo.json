@@ -1,0 +1,28 @@
+{
+  "title": "HODGE-DISPROOF: Dependent Type-Theoretic Schema and 31-Module Lean 4 Audit Framework for Rational Hodge Counterexample Candidates",
+  "upload_type": "software",
+  "description": "Standalone 31-module Lean 4 formalization (`Hodge/*.lean`, `Main.lean`, `EVIDENCE_LEDGER.md`) specifying the exact dependent type-theoretic signature (D_bad, gamma_bad, forall z, cl(z) = gamma_bad -> False) required for any putative counterexample to the rational Hodge Conjecture, together with automated audit checks tracking which candidate geometric inputs are inhabited vs. open. Formalizes the type-theoretic verification schema and audit ledger for testing candidate counterexamples in Lean 4; explicitly records Clay status as OPEN and does not claim an inhabited unconditional disproof. Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0.",
+  "creators": [
+    {
+      "name": "Frohman, Benjamin Stanley",
+      "orcid": "0009-0006-7068-3718"
+    }
+  ],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "keywords": [
+    "Lean 4",
+    "Hodge conjecture",
+    "Counterexample schema",
+    "Dependent type theory",
+    "Formal verification audit",
+    "Cycle class map"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/BenFrohman/HODGE-DISPROOF",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

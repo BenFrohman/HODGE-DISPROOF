@@ -1,0 +1,203 @@
+{
+  "schema": "titan-audit-v1.0",
+  "repository": "BenFrohman/HODGE-DISPROOF",
+  "doi": "10.5281/zenodo.23653001",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "timestamp_cdt": "2026-10-25T19:10:00-05:00",
+  "lean_module_count": 31,
+  "sorry_count": 0,
+  "modules": [
+    {
+      "file": "Hodge/AnalyticInterface.lean",
+      "sha256": "73f02439d9f8169fec1a08e0caaa564935540e91b68ce3b67c4fa261bc00ee10",
+      "declarations": 1,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/Basic.lean",
+      "sha256": "3ebaefbd2ebf8fb92de0e4f5720ae7e7c20778738a09d8368e4949066739e3ad",
+      "declarations": 5,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/ClayBlueprint.lean",
+      "sha256": "f1ec1b5d2a4d76bdd2657a204496463075482707db8fc98a1b14705fff215708",
+      "declarations": 4,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/ClaySpec.lean",
+      "sha256": "6998297c71f3137163b695a82d472c339fb68e7a93cc430a16a9c0507b9189f4",
+      "declarations": 3,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/ClayStructure.lean",
+      "sha256": "57a68ea0b7b53dc4190152a3374dc3d99f00851c56babdbfe80e78067de39475",
+      "declarations": 5,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/CoeffRing.lean",
+      "sha256": "8347242ef3647111fe7689f836f6b4ebbe76c76e461f0242cc3684c66714ba1a",
+      "declarations": 9,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/ConjugateFiltration.lean",
+      "sha256": "7a947e863b0d29d65add8afa2c533c98e3ac92924d1ea04ae4275a96862e6eee",
+      "declarations": 3,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/Disproof.lean",
+      "sha256": "cf09c00cdbe9c9fff763fbb71d7eddf8a28c4dd3ef2159b1bf56397c264106c0",
+      "declarations": 8,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/EvenOddGadget.lean",
+      "sha256": "88280090520e08d7ec258f90029b9418c5166cec886479fafb373654722730fe",
+      "declarations": 11,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/FalseOfBadCl.lean",
+      "sha256": "693bb8734c14db1a6ac80f3397b6a343b3036b699c0347bcb25797d07ce5433d",
+      "declarations": 13,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/Fields123.lean",
+      "sha256": "68cfbd867eae2f0915f08b03212463768d44267a1122deab67f51710732ce421",
+      "declarations": 9,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/FourfoldCase.lean",
+      "sha256": "260c79b96ed4c259fff9d4ee74b37f255126a3140db0fc700e0b2099727145c1",
+      "declarations": 4,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/FourfoldMissType.lean",
+      "sha256": "93bca6ff5c30d8316a176d0b9d9ec925f5318057734a50eccec98ce1b57b5007",
+      "declarations": 2,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/GeometricDictionary.lean",
+      "sha256": "69bc48acdccb1785ec1b0d9cc683653c6729f2ce56c94c56b381346d3aa54c3a",
+      "declarations": 10,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/GeometricHost.lean",
+      "sha256": "a9829d2fbdd679eae065af7e375a04ac83961e490a314d1771294cb5c520d9d6",
+      "declarations": 10,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/HardLefschetz.lean",
+      "sha256": "7dfdb7a902149247ec97302da284a78d14ba857087ef1923d5f06cc824c129aa",
+      "declarations": 1,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/IntegratedGeometry.lean",
+      "sha256": "96adc5992e8501af4d8bc11c8beba0440f72abc05c955b95f470f3c077afeeee",
+      "declarations": 7,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/IntegratedSpec.lean",
+      "sha256": "e6ef5b7208065f97066d2789b1f4acf0c79774bb1eb388f129befd235dd174da",
+      "declarations": 6,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/LefschetzIteration.lean",
+      "sha256": "65c33c67280cb1b4caae635f9eac69f3732aee6c6b09cd64ec0699ba898bb977",
+      "declarations": 4,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/Lexicon.lean",
+      "sha256": "89569e16fbb4a32b5a3fd6980e099880747789b37b7411cc0c6f49d26a2f09b0",
+      "declarations": 7,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/LinZhang.lean",
+      "sha256": "1f09d6e1b93dfde36ac5044c54a7c79dd3c521cc92d781aca9f5f4884ebd53a5",
+      "declarations": 3,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/LinZhangPolynomial.lean",
+      "sha256": "e446a92e50a8e0bcb55f614a7f196e8645143ced57b22a4361d4cc184e0c50e8",
+      "declarations": 5,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/PeriodInterface.lean",
+      "sha256": "33c02d6a7a56856cc555b2b14aead1c50adf54bac62cd462293044bf675d7727",
+      "declarations": 2,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/PrimitiveDecomposition.lean",
+      "sha256": "163393e411918b18879a9d44a4152be310f07e834ba7acc7b71fe4a59cd21a39",
+      "declarations": 3,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/ProjectiveFourfoldSpace.lean",
+      "sha256": "712d77d9ac584a9f56d3376eeb876efbf68c017d5409e91f145faf45997fe2fe",
+      "declarations": 5,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/RealProjectiveFourfold.lean",
+      "sha256": "d81220e40ca1938bcec2900b0f066333b6e7b13849a8e6ac257adae9cc5b86ac",
+      "declarations": 4,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/SchemeSpec.lean",
+      "sha256": "7fa822cae65e720d197c13a68c896f2a2fde2ea8b3d6efdd7b0fd53c963bba87",
+      "declarations": 4,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/ThomSebastiani.lean",
+      "sha256": "36a3f0ec6ab0079ca14e6229bed29401363654d69f3f192fdb9f6d433625d106",
+      "declarations": 3,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/Typecheck.lean",
+      "sha256": "079be03225284a28d1e98e0ac9783129b294e1332cc0fbef914ce2da62db91db",
+      "declarations": 5,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/VF.lean",
+      "sha256": "190f8621e6ef5475ff96fb9a59808acd529adaca3ff2d5ad598a4c23b6930971",
+      "declarations": 4,
+      "sorry_tokens": 0
+    },
+    {
+      "file": "Hodge/X5.lean",
+      "sha256": "2c0f85fb8bc80ffe153439da1418668b11138f4f9d9af54f3f8a9dcbdb0da262",
+      "declarations": 6,
+      "sorry_tokens": 0
+    }
+  ],
+  "verdict": "PASS_ZERO_SORRY_HONEST_BOUNDARY",
+  "payload_sha256": "1b9988361e6341c7b1a4fe09f95d7f4823f5d9ddea18bd5e44a91b0a2499f1a8",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "f831d2bd336438210a70fb63cf999bb396de35269bef2a43aa5d70b2153957bd19c68a9b4ee5a1aefe47bdd3c136a2f1511bdceb38d2fc9d7b98417405b26302"
+}
