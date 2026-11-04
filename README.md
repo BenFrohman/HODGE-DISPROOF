@@ -60,3 +60,8 @@ It is **not** a Clay close. The rational Hodge conjecture remains **open**.
 - **SealGuard SHA-256 Merkle Root:** `412a9c8922e6c9d698f4b8995b05b7a94be80131c053eea2e8b636ee0c22a41a` (`PROVENANCE_MERKLE_ROOT.json`)
 - **Titan Audit Certificate:** `audit/TITAN_AUDIT_CERTIFICATE.json` (Ed25519 key `b428fb72676f1c52`)
 - **Scope & Scientific Boundary:** Formalizes the type-theoretic verification schema and audit ledger for testing candidate counterexamples in Lean 4; explicitly records Clay status as OPEN and does not claim an inhabited unconditional disproof.
+
+## Zenodo archive
+
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653000.svg)](https://doi.org/10.5281/zenodo.23653000) HODGE-DISPROOF: Dependent Type-Theoretic Schema and 31-Module Lean 4 Audit Framework for Rational Hodge Counterexample Candidates — all versions: [10.5281/zenodo.23653000](https://doi.org/10.5281/zenodo.23653000); latest version: [10.5281/zenodo.23653001](https://doi.org/10.5281/zenodo.23653001)
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23867520.svg)](https://doi.org/10.5281/zenodo.23867520) HODGE-DISPROOF: Dependent Type-Theoretic Schema and 31-Module Lean 4 Audit Framework for Rational Hodge Counterexample Candidates — all versions: [10.5281/zenodo.23867520](https://doi.org/10.5281/zenodo.23867520); latest version: [10.5281/zenodo.23867521](https://doi.org/10.5281/zenodo.23867521)
