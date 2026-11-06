@@ -3,8 +3,10 @@ Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Benjamin Stanley Frohman
 -/
+import Mathlib.Algebra.Field.Rat
+import Mathlib.Algebra.Module.LinearMap.Basic
 import Mathlib.Algebra.Module.Submodule.Lattice
-import Mathlib.LinearAlgebra.Span
+import Mathlib.LinearAlgebra.Span.Basic
 
 /-!
 # Interface for the Hodge conjecture
