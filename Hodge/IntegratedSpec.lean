@@ -9,7 +9,7 @@ import Hodge.ClayBlueprint
 # Integrated geometric specification
 
 Structure-shaped names for a manifold, Hodge filtration, Lefschetz data,
-and Chow system. There is **no inhabitant** of `ClayHodgeConjectureDisproof`.
+and Chow system. No geometric witness for `ClayHodgeConjectureDisproof` is supplied.
 
 This is not a Mathlib construction. The imports
 `Mathlib.Geometry.Manifold.Complex`, `ModelWithCorners.extI`,
@@ -21,6 +21,8 @@ isomorphisms, so Hard Lefschetz is not a gadget firewall.
 A Clay host must be *projective*, not merely compact Kähler (Voisin).
 `γ` must come from `H^{2k}(X, Q)`, not only `H^{2k}(X, C)`.
 -/
+
+set_option autoImplicit false
 
 namespace Hodge
 namespace IntegratedSpec
@@ -46,14 +48,27 @@ structure TranscendentalChowSystem (M : SmoothComplexManifold) (HT : HodgeTheory
   cl_in_F : Prop
   cl_in_Fbar : Prop
 
-/-- Shape of a fourfold miss. Uninhabited.
-Missing from this Prop: projectivity of `M`, and `γ` coming from `H^4(X, Q)`. -/
-def ClayHodgeConjectureDisproof : Prop :=
+/-- A parameterized miss specification. Projectivity and rational Hodge membership
+are explicit inputs, not facts established by the carrier-only structures above. -/
+def ClayHodgeConjectureDisproof
+    (isProjective : SmoothComplexManifold → Prop)
+    (isRationalHodge22 : (M : SmoothComplexManifold) → (HT : HodgeTheory M) → HT.H 4 → Prop) : Prop :=
   ∃ (M : SmoothComplexManifold) (HT : HodgeTheory M)
     (_PKS : PolarizedKaehler M HT) (TCS : TranscendentalChowSystem M HT)
     (γ : HT.H 4),
-      M.n = 4 ∧ ∀ z : TCS.CH 2, TCS.cl 2 z = γ → False
+      M.n = 4 ∧ isProjective M ∧ isRationalHodge22 M HT γ ∧
+        ∀ z : TCS.CH 2, TCS.cl 2 z ≠ γ
 
+/-- A nonprojective package cannot witness this target. -/
+theorem no_disproof_without_projectivity
+    (isProjective : SmoothComplexManifold → Prop)
+    (isRationalHodge22 : (M : SmoothComplexManifold) → (HT : HodgeTheory M) → HT.H 4 → Prop)
+    (h : ∀ M, ¬ isProjective M) :
+    ¬ ClayHodgeConjectureDisproof isProjective isRationalHodge22 := by
+  rintro ⟨M, _, _, _, _, _, hproj, _⟩
+  exact h M hproj
+
+-- Legacy metadata tautology: not a proof of a disproof or of uninhabitedness.
 theorem no_term : True := trivial
 
 end IntegratedSpec

@@ -15,6 +15,8 @@ paths and names (`IsProjective`, `SmoothDimension`, `Scheme.Spec` of
 No `ConcreteClayFourfold`. No miss axiom. No theorem that Hodge is false.
 -/
 
+set_option autoImplicit false
+
 namespace Hodge
 namespace SchemeSpec
 
@@ -37,12 +39,24 @@ axiom ChowGroupSurfacesQ (F : RealProjectiveFourfold) : Type
 axiom cycle_class_map (F : RealProjectiveFourfold) : Type
 axiom isPrimitiveHodge22 (F : RealProjectiveFourfold) (γ : SingularCohomologyQ F 4) : Prop
 
-def ClayFourfoldDisproofOnSchemes : Prop :=
+/-- A cycle-class map must actually be supplied; the legacy `cycle_class_map`
+Type above does not specify a function and is not used by this target. -/
+def ClayFourfoldDisproofOnSchemes
+    (cl : (F : RealProjectiveFourfold) → ChowGroupSurfacesQ F → SingularCohomologyQ F 4) : Prop :=
   ∃ (F : RealProjectiveFourfold) (γ : SingularCohomologyQ F 4),
-    isPrimitiveHodge22 F γ ∧ True
+    isPrimitiveHodge22 F γ ∧ ∀ z : ChowGroupSurfacesQ F, cl F z ≠ γ
 
+theorem no_disproof_of_surjective
+    (cl : (F : RealProjectiveFourfold) → ChowGroupSurfacesQ F → SingularCohomologyQ F 4)
+    (h : ∀ F γ, ∃ z, cl F z = γ) : ¬ ClayFourfoldDisproofOnSchemes cl := by
+  rintro ⟨F, γ, _, hmiss⟩
+  obtain ⟨z, hz⟩ := h F γ
+  exact hmiss z hz
+
+-- Legacy metadata tautology: not a proof of a disproof or of uninhabitedness.
 theorem ClayFourfoldDisproofOnSchemes_unfilled : True := trivial
 
+-- Legacy metadata tautology: not a proof of a disproof or of uninhabitedness.
 theorem no_miss_axiom : True := trivial
 
 end SchemeSpec

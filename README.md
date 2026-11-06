@@ -1,3 +1,5 @@
+[![Selected schema regressions](https://github.com/BenFrohman/HODGE-DISPROOF/actions/workflows/schema.yml/badge.svg)](https://github.com/BenFrohman/HODGE-DISPROOF/actions/workflows/schema.yml)
+
 # HODGE-DISPROOF
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653001.svg)](https://doi.org/10.5281/zenodo.23653001) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)

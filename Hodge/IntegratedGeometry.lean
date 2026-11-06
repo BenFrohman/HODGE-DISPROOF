@@ -16,6 +16,8 @@ by Hard Lefschetz: `L` acts on cohomology, `cl` acts on Chow. An
 isomorphism `L^{n-m}` does not force `cl` to be nonzero.
 -/
 
+set_option autoImplicit false
+
 namespace Hodge
 namespace Integrated
 
@@ -37,17 +39,25 @@ structure PolarizedKaehler (M : SmoothComplexManifold) (HT : HodgeTheory M) wher
   primitive_ok : Prop
 
 structure ChowSystem (M : SmoothComplexManifold) (HT : HodgeTheory M) where
-  easy_arrow : Prop   -- cl lands in F^k ∩ F̄^k
+  easy_arrow : Prop   -- existing interface condition, not a proof of geometry
+  CH : Nat → Type
+  cl : (k : Nat) → CH k → HT.H (2 * k)
 
-/-- Clay Σ-sentence over the pack. Uninhabited. -/
-def ClayHodgeConjectureDisproof : Prop :=
+/-- Parameterized target, requiring all conditions rather than an `∧ True` placeholder.
+The carrier-only structures still need an independently constructed geometric realization. -/
+def ClayHodgeConjectureDisproof
+    (isProjective : SmoothComplexManifold → Prop)
+    (isRationalHodge22 : (M : SmoothComplexManifold) → (HT : HodgeTheory M) → HT.H 4 → Prop) : Prop :=
   ∃ (M : SmoothComplexManifold) (HT : HodgeTheory M)
-    (_PK : PolarizedKaehler M HT) (CS : ChowSystem M HT),
-      CS.easy_arrow ∧ True  -- the miss field is not supplied
+    (_PK : PolarizedKaehler M HT) (CS : ChowSystem M HT) (γ : HT.H 4),
+      M.n = 4 ∧ isProjective M ∧ isRationalHodge22 M HT γ ∧ CS.easy_arrow ∧
+        ∀ z : CS.CH 2, CS.cl 2 z ≠ γ
 
+-- Legacy metadata tautology: not a proof of a disproof or of uninhabitedness.
 theorem ClayHodgeConjectureDisproof_unfilled : True := trivial
 
 /-- Hard Lefschetz does not refute a zero cycle-class map. -/
+-- Legacy metadata tautology: not a proof of a disproof or of uninhabitedness.
 theorem L_iso_does_not_block_cl_zero : True := trivial
 
 end Integrated

@@ -19,8 +19,10 @@ This file names the spec. It does **not** declare `ConcreteClayFourfold`,
 `rational_hodge_conjecture_is_false`.
 -/
 
+set_option autoImplicit false
+
 namespace Hodge
-namespace SchemeSpec
+namespace RealFourfoldSpec
 
 /-- Placeholder for a Mathlib scheme. Not constructed here. -/
 axiom Scheme : Type
@@ -45,11 +47,21 @@ axiom cycle_class (F : RealProjectiveFourfold) : ChowSurfacesQ F → SingularCoh
 def ClayFourfoldMiss (F : RealProjectiveFourfold) (γ : SingularCohomologyQ F 4) : Prop :=
   ∀ z : ChowSurfacesQ F, cycle_class F z = γ → False
 
-/-- Uninhabited. No `ConcreteClayFourfold`. -/
-def RationalHodgeConjectureIsFalse : Prop :=
-  ∃ (F : RealProjectiveFourfold) (γ : SingularCohomologyQ F 4), ClayFourfoldMiss F γ
+/-- Parameterized specification: the caller must identify rational (2,2) classes.
+No geometric witness or interpretation of the existing interface axioms is supplied. -/
+def RationalHodgeConjectureIsFalse
+    (isHodge22 : (F : RealProjectiveFourfold) → SingularCohomologyQ F 4 → Prop) : Prop :=
+  ∃ (F : RealProjectiveFourfold) (γ : SingularCohomologyQ F 4),
+    isHodge22 F γ ∧ ClayFourfoldMiss F γ
 
+theorem no_disproof_without_hodge_classes
+    (isHodge22 : (F : RealProjectiveFourfold) → SingularCohomologyQ F 4 → Prop)
+    (h : ∀ F γ, ¬ isHodge22 F γ) : ¬ RationalHodgeConjectureIsFalse isHodge22 := by
+  rintro ⟨F, γ, hγ, _⟩
+  exact h F γ hγ
+
+-- Legacy metadata tautology: not a proof of a disproof or of uninhabitedness.
 theorem not_proved : True := trivial
 
-end SchemeSpec
+end RealFourfoldSpec
 end Hodge
