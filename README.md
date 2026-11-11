@@ -67,3 +67,7 @@ It is **not** a Clay close. The rational Hodge conjecture remains **open**.
 
 - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653000.svg)](https://doi.org/10.5281/zenodo.23653000) HODGE-DISPROOF: Dependent Type-Theoretic Schema and 31-Module Lean 4 Audit Framework for Rational Hodge Counterexample Candidates — all versions: [10.5281/zenodo.23653000](https://doi.org/10.5281/zenodo.23653000); latest version: [10.5281/zenodo.23653001](https://doi.org/10.5281/zenodo.23653001)
 - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23867520.svg)](https://doi.org/10.5281/zenodo.23867520) HODGE-DISPROOF: Dependent Type-Theoretic Schema and 31-Module Lean 4 Audit Framework for Rational Hodge Counterexample Candidates — all versions: [10.5281/zenodo.23867520](https://doi.org/10.5281/zenodo.23867520); latest version: [10.5281/zenodo.23867521](https://doi.org/10.5281/zenodo.23867521)
+
+## Citation
+
+Cite this work with [`CITATION.cff`](CITATION.cff) (GitHub's "Cite this repository" button). Zenodo DOI: [10.5281/zenodo.23653001](https://doi.org/10.5281/zenodo.23653001).
