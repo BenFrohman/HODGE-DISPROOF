@@ -64,4 +64,4 @@ That bookkeeping is the discovery. It does not inhabit Field 2 or Field 3.
 Copyright (c) 2026 Benjamin Stanley Frohman.
 Licensed under the Apache License, Version 2.0.
 Cite as a schema and a ledger, not as a Clay resolution.
-X: @Investor0x. GitHub: @BenFrohman.
+X: @Frohmanian. GitHub: @BenFrohman.

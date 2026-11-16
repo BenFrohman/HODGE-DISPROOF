@@ -16,7 +16,7 @@ encoding under `Hodge/`, documentation under `docs/`, the preprint draft
 under `papers/`, the Clay tag, and this public release.
 
 GitHub: https://github.com/BenFrohman
-X: https://x.com/Investor0x
+X: https://x.com/Frohmanian
 Sister record: https://github.com/BenFrohman/HODGE
 
 ## Software this encoding stands on
