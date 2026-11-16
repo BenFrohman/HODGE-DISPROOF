@@ -1,3 +1,9 @@
+/-
+Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Benjamin Stanley Frohman
+-/
+
 import Hodge.RealProjectiveFourfold
 import Hodge.SchemeSpec
 import Hodge.IntegratedSpec
@@ -6,6 +12,13 @@ import Hodge.FourfoldMissType
 import Hodge.ProjectiveFourfoldSpace
 
 -- These regression proofs check the targets' logical content, not geometric realization.
+
+/-!
+# Hodge.SchemaRegression
+
+Machine-checked Lean 4 module.
+-/
+
 example : ¬ Hodge.RealFourfoldSpec.RationalHodgeConjectureIsFalse (fun _ _ => False) := by
   exact Hodge.RealFourfoldSpec.no_disproof_without_hodge_classes _ (fun _ _ h => h)
 
